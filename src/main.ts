@@ -1,11 +1,15 @@
 //必要なパッケージをインポートする
+console.log('aaaa'); 
+
 import { TextChannel } from 'discord.js'
 import { GatewayIntentBits, Client, Partials, Message } from 'discord.js'
 import dotenv from 'dotenv'
 
 //.envファイルを読み込む
 dotenv.config()
-
+console.log('This is a test')
+console.log('aaaa 王')
+console.log("jo");
 //Botで使うGetwayIntents、partials
 const client = new Client({
   intents: [
@@ -28,7 +32,6 @@ client.once('ready', () => {
 
 client.on('messageCreate', async (message: Message) => {
     if (message.author.bot) return
-    console.log(message.channel)
     if (message.channelId != '1127563852322705500') return
     const postchannel = client.channels.cache.get('1127563852322705500') as TextChannel;
     postchannel.send(`こらこら〜、${message.member?.displayName}! 一生懸命も、休み休みにしてよね :heart:`);
